@@ -76,4 +76,5 @@ def customer(request):
         form = CustomerForm()
         return render(request, 'form_demo/customer.html',{'form':form})
     
+
     
