@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'form_demo'
+    'form_demo',
+    'middleware_demo',
 
 ]
 
@@ -49,6 +50,19 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    ## function based middleware
+    # 'middleware_demo.middlewares.my_middleware' ,
+
+    ## Class based middleware
+    # 'middleware_demo.middlewares.MyMiddleware' ,
+
+    # 'middleware_demo.middlewares.MyViewMiddleware' ,
+    # 'middleware_demo.middlewares.MyExceptionMiddleware' ,
+    # 'middleware_demo.middlewares.MyTemplateResponseMiddleware' ,
+
+    'middleware_demo.middlewares.MyCombinedMiddleware' ,
+
+    
 ]
 
 ROOT_URLCONF = 'practise.urls'

@@ -20,5 +20,6 @@ from django.urls.conf import include
 
 urlpatterns = [
    path('admin/', admin.site.urls),
-   path('form/',include('form_demo.urls'))
+   path('form/',include('form_demo.urls')),
+   path('middleware_demo/',include('middleware_demo.urls'))
 ]
