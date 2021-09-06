@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -39,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'form_demo',
     'middleware_demo',
+    'manage_static_files',
+    'file_upload'
 
 ]
 
@@ -60,7 +63,7 @@ MIDDLEWARE = [
     # 'middleware_demo.middlewares.MyExceptionMiddleware' ,
     # 'middleware_demo.middlewares.MyTemplateResponseMiddleware' ,
 
-    'middleware_demo.middlewares.MyCombinedMiddleware' ,
+    # 'middleware_demo.middlewares.MyCombinedMiddleware' ,
 
     
 ]
@@ -134,6 +137,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIR = [
+	os.path.join(BASE_DIR, 'static'),  # produce absolute path
+]
+
+# directory to store uploaded files
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+MEDIA_URL = '/media/'
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
