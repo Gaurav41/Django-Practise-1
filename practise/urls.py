@@ -27,7 +27,8 @@ urlpatterns = [
    path('form/',include('form_demo.urls')),
    path('middleware_demo/',include('middleware_demo.urls')),
    path('static_files/',include('manage_static_files.urls')),
-   path('file_upload/',include('file_upload.urls'))
+   path('file_upload/',include('file_upload.urls')),
+
 ]
 
 
